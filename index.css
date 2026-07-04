@@ -67,7 +67,7 @@ nav{
 }
 
 .landing-title{
-    margin-top: -400px; /* move up */
+    margin-top: -300px; /* move up */
     font-family: "Poppins", sans-serif;
     font-size: 100px;
     font-weight: 400;
@@ -455,7 +455,7 @@ nav{
 }
 
 .page-4{
-    height: 180vh;
+    height: 200vh;
     width: 100%;
     background-color: #5E99BD;
     background-position: center;
