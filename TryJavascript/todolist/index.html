@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="heading">
+        To-Do List
+    </h1>
+    <div class="task1-checkbox">
+        <input onclick="checkTask1()" type="checkbox" name="task-1" id="task-1">
+        <input type="text" name="task1-txt" id="task1-txt">
+        <button onclick="addTask1()" class="add">Add</button>
+        <button class="del">Delete</button>
+        
+    </div>
+    <div class="task2-checkbox">
+        <input type="checkbox" name="task-2" id="task-2">
+        <input type="text" name="task2-txt" id="task2-txt">
+        <button class="del">Delete</button>
+    </div>
+    <div class="task2-checkbox">
+        <input type="checkbox" name="task-3" id="task-3">
+        <input type="text" name="task3-txt" id="task3-txt">
+        <button class="del">Delete</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
