@@ -7,11 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ef3fe0b189.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/ef3fe0b189.js" crossorigin="anonymous"></script> -->
+    <script src="index.js"></script>
     <title>Ipsha Singh</title>
 </head>
 <body>
-    <section class="landing-page" id = "aboutme">
+    <section class="landing-page" id = "top">
         <nav>
             <div class="nav-list">
                 <ul>
@@ -26,10 +27,13 @@
         <div class="content">
             <div class="half-1">
     <h1 class="landing-title">Hey there, <br> It's Ipsha</h1>
-    <p>Computer Science Engineering student passionate about web development, artificial intelligence, and building user-centric digital experiences. Always learning, creating, and solving real-world problems through technology.
-
-I'm constantly looking for opportunities to learn, create, and contribute to meaningful projects while growing as a developer and future engineer.</p>
-
+    <h2 class="typing">
+        <span id="typing-text"></span>
+        <span class="cursor">|</span>
+    </h2>
+    <p>Software developer with a foundation in Computer Science Engineering, specializing in web development, mobile applications, AI, machine learning, and intelligent chatbots. I build modern, user-centric digital solutions that combine thoughtful design with reliable engineering.
+</p>
+            
     <div class="cta-btns">
         <a href="resume.pdf" download="Ipsha_Singh_Resume.pdf" class="resume-btn">
             Download Resume
@@ -40,8 +44,7 @@ I'm constantly looking for opportunities to learn, create, and contribute to mea
             </svg>
         </a>
 
-        <a href="mailto:ipsha.singh28@gmail.com" class="contact-btn">
-            Contact Me
+        <a href="mailto:ipsha.singh28@gmail.com" class="contact-btn">            
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22 6 12 13 2 6"/>
@@ -70,7 +73,7 @@ I'm constantly looking for opportunities to learn, create, and contribute to mea
                     <img src="Aboutme.png" alt="">
                     <h1>About Me</h1>
                     <p>Here's what you should <br> know about me...</p>
-                    <div class="readme"><a href="#aboutme">Read More <i class="fa-solid fa-chevron-right"></i></a></div>
+                    <div class="readme"><a href="#about">Read More</a></div>
                 </div>
                 
             </div>
@@ -80,7 +83,7 @@ I'm constantly looking for opportunities to learn, create, and contribute to mea
                     <img src="Skills.png" alt="">
                     <h1>My Skills</h1>
                     <p>Here's what I have <br> learnt as a student...</p>
-                    <div class="readme"><a href="#skills">Read More <i class="fa-solid fa-chevron-right"></i></a></div>
+                    <div class="readme"><a href="#skills">Read More </a></div>
                 </div>
             </div>
 
@@ -89,26 +92,29 @@ I'm constantly looking for opportunities to learn, create, and contribute to mea
                     <img src="Works.png" alt="">
                     <h1>My Works</h1>
                     <p>I've been working <br> these projects...</p>
-                    <div class="readme"><a href="#work">Read More <i class="fa-solid fa-chevron-right"></i></a></div>
+                    <div class="readme"><a href="#work">Read More </a></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="page-6">
+    <section class="page-6" id = "about">
         <div class="head-container">
-            <h1 class="top-heading">
+            <h1 class="top-heading" id="aboutme">
                 About Me
             </h1>
         </div>
 
-        <div class="body-container">
+        <div class="body-container" id = "edscreen">
             <div class="avatar-pic">
                 <img src="walkingavatar.png" alt="">
             </div>
             <div class="exp">                
                 <div class="content-text">
                     <div class="para-1">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero provident expedita nesciunt iure voluptatibus labore at architecto iusto, adipisci nihil eos numquam, excepturi vero earum laudantium neque repudiandae perferendis! Excepturi voluptates quisquam nulla, illum corporis molestiae ratione minima quas nesciunt.</p>
+                        <p>Passionate about building technology that solves real-world problems, I develop websites, mobile applications, AI-powered solutions, and chatbots, combining technical expertise with thoughtful, user-centered design to create experiences that are both functional and intuitive.
+
+I approach every project with curiosity, attention to detail, and a commitment to understanding my clients' goals. 
+</p>
                     </div>
                 </div>
                 <div class="languages">
@@ -180,23 +186,21 @@ I'm constantly looking for opportunities to learn, create, and contribute to mea
         </div>
     </section>
     <section class="page-exp">
-        <div class="avatar-pic">
-            <img src="walkingavatar.png" alt="">
-        </div>
+        
         <div class="exp">
-            <h1 class="sub-heading">Experience</h1>
+            <h1 class="top-heading">Experience</h1>
             <div class="content-text">
                 <div class="para-1">
                     <h2>LearnWik</h2>
-                    <h3>Jan 5/23 - March 5/23</h3>
+                    <h3>ML - Python Developer</h3>
                     <p>Training course on Python, Artificial Intelligence & ComputerVision.</p>
                 </div>
             </div>
             <br>
             <div class="content-text">
                 <div class="para-1">
-                    <h2>Pledge A Smile</h2>
-                    <h3>Jan 5/23 - March 5/23</h3>
+                    <h2>Pledge A Smile NGO</h2>
+                    <h3>Graphic Designer & Fundraiser</h3>
                     <p>Social internship in NGO involving Fundraising, Social Media Marketing,  and Developing Project.</p>
                 </div>
             </div>
@@ -204,7 +208,15 @@ I'm constantly looking for opportunities to learn, create, and contribute to mea
             <div class="content-text">
                 <div class="para-1">
                     <h2>Colored Cow</h2>
-                    <h3>Jan 5/23 - March 5/23</h3>
+                    <h3>Web Developer</h3>
+                    <p>Created an E-Library website for ColoredCow’s online repository. </p>
+                </div>
+            </div>
+            <br>
+            <div class="content-text">
+                <div class="para-1">
+                    <h2>Uttarakhand State Council of Science & Technology, Research & Science Center</h2>
+                    <h3>AI ML & Backend developer</h3>
                     <p>Created an E-Library website for ColoredCow’s online repository. </p>
                 </div>
             </div>
