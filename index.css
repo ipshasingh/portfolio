@@ -235,7 +235,7 @@ nav{
 .page-3{
     height: 110vh;
     width: 100%;
-    background-color: #C9CFD3;
+    background-color: #286498;
     background-position: center;
     background-size: cover;
     margin: auto;
@@ -348,7 +348,7 @@ nav{
 }
 
 .text{
-    color: #286498;
+    color: #fff;
     font-family: 'Poppins', sans-serif;
     font-size: 26px;
     font-weight: 400 
@@ -757,7 +757,7 @@ nav{
 .page-6{
     height: 130vh;
     width: 100%;
-    background-color: #286498;  
+    background-color: #C9CFD3; 
     display: flex;  
     flex-direction: column;
     
@@ -850,7 +850,7 @@ nav{
 }
 
 .edu .content-texts{
-    border-left: 2px solid #fff;
+    border-left: 2px solid #286498; 
 }
 
 .edu .para-1, .edu .para-2{
