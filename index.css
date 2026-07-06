@@ -6,7 +6,8 @@
 .landing-page{
     height: 130vh;
     width: 100%;
-    background-color: #C9CFD3;
+    background-color: #fff;   
+    /* #C9CFD3; */
     background-position: center;
     background-size: cover;
     position: relative;
@@ -101,18 +102,26 @@ nav{
 
 
 .img-circle{
+
+    width:540px;
+    height:540px;
+
+    border-radius:50%;
+
     
-    border-radius: 50%;
-    height: 500px;
-    width: 500px;
-    background: linear-gradient(-10deg, #286498 35%, #C9CFD3 35%);
-    /* use this linear gradient tool to half green half bg */
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+        0 0 80px rgba(196,158,48,.37);
 }
 
 .page-2{
     height: 130vh;
     width: 100%;
-    background-image: linear-gradient( #286498 69.5%,#C9CFD3 69.5% );
+    background-image: linear-gradient( #286498 69.5%,#fff 69.5% );
     background-position: center;
     background-size: cover;
     margin: auto;
@@ -164,7 +173,7 @@ nav{
     margin: 310px 50px; 
     height: 400px;
     width: 500px;
-    border: 4px solid #C9CFD3;
+    border: 4px solid #fff;
     
 }
 
@@ -489,7 +498,7 @@ nav{
 
 .page-4{
     width: 100%;
-    background-color: #5E99BD;
+    background-color: #286498;
     background-position: center;
     background-size: cover;
     margin: auto;
@@ -528,7 +537,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 60px;
     margin: 10px auto;
     max-width: 1100px;
     padding: 0 30px;
@@ -575,6 +584,10 @@ nav{
     flex-direction: row-reverse;
 }
 
+#work{
+    color: #C49E30;
+}
+
 .project-img {
     flex-shrink: 0;
     width: 300px;
@@ -594,11 +607,15 @@ nav{
     align-items: flex-start;
     gap: 12px;
     font-family: 'Poppins', sans-serif;
+    color: #C9CFD3;
     font-size: 20px;
     text-align: justify;
     max-width: 750px;
 }
 
+.project-text p{
+    color: #fff;
+}
 /* .img-text{
     height: 150px;
     width: 150px; 
@@ -1002,7 +1019,7 @@ nav{
 
 .page-exp{
     width:100%;
-    background-color:#C9CFD3;
+    background-color:#fff;
 
     display:flex;
     justify-content:center;
