@@ -4,7 +4,7 @@
 }
 
 .landing-page{
-    height: 160vh;
+    height: 120vh;
     width: 100%;
     background-color: #C9CFD3;
     background-position: center;
@@ -67,7 +67,7 @@ nav{
 }
 
 .landing-title{
-    margin-top: -300px; /* move up */
+    margin-top: 50px; /* move up */
     font-family: "Poppins", sans-serif;
     font-size: 100px;
     font-weight: 400;
@@ -87,7 +87,7 @@ nav{
 }
 
 .half-2{
-       
+    margin-top: 50px;
     box-sizing: border-box;
     margin-right: 50px;
 }
@@ -261,27 +261,6 @@ nav{
     color: #9FA2AB;
     padding: 10px 0px 10px 0px;
     margin-bottom: 0px;
-}
-.resume-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 30px;
-    padding: 15px 30px;
-    background-color: #C49E30;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-}
-
-.resume-btn:hover {
-    background-color: #a9852a;
-    transform: translateY(-2px);
 }
 .cta-btns {
     display: flex;
@@ -483,130 +462,9 @@ nav{
     position: relative;
 }
 
-/*for projects*/
-/* 
-.projects{
-    display: flex;
-    flex-direction: column;
-    
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-#project1{
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-}
-
-#project2{
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 10px;
-}
-
-#project3{
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-}
-
-#project4{
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 10px;
-}
-
-#project1_img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    margin-left: 80px;
-    
-}
-#project1_img img{
-    height: 200px;
-    width: 200px;
-
-}
-
-#project2_img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    margin-right: 80px;
-}
-#project2_img img{
-    height: 200px;
-    width: 200px;
-}
-
-#project3_img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    margin-left: 80px;
-    
-}
-#project3_img img{
-    height: 200px;
-    width: 200px;
-
-}
-
-#project4_img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    margin-right: 80px;
-}
-#project4_img img{
-    height: 200px;
-    width: 200px;
-}
-
-#project1_text{
-    display: flex;
-    flex-direction: column;
-    margin-left: 60px;
-    margin-top: -350px;
-
-}
-
-#project1_title{
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    text-align: justify;
-}
-
-#project2_text{
-    margin-right: 60px;
-    margin-top: -350px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    text-align: justify;
-}
-
-#project3_text{
-    margin-left: 60px;
-    margin-top: -350px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    text-align: justify;
-}
-
-#project4_text{
-    margin-right: 60px;
-    margin-top: -350px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    text-align: justify;
-} */
-
 
 
 .page-4{
-    min-height: 400vh;   /* keeps it from ever looking too short/empty */
     width: 100%;
     background-color: #5E99BD;
     background-position: center;
@@ -696,13 +554,13 @@ nav{
 
 .project-img {
     flex-shrink: 0;
-    width: 300px !important;
-    height: 300px !important;
+    width: 300px;
+    height: 300px;
 }
 
 .project-img img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -808,12 +666,6 @@ nav{
 
 }
 
-.body-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .page-5 .body-container{
     margin-left: 230px;
     margin-top: 20px;
@@ -892,7 +744,8 @@ nav{
     font-weight: 300;
 }
 
-.img-text p,h1{
+.img-text p,
+.img-text h1{
     padding-top: 50%;
 }
 
@@ -906,7 +759,17 @@ nav{
     width: 100%;
     background-color: #286498;  
     display: flex;  
+    flex-direction: column;
+    
+}
+
+.page-exp{
+    height: 130vh;
+    width: 100%;
+    background-color: #286498;  
+    display: flex;  
     align-items: center;
+    justify-content: space-evenly;
     flex-direction: row;
     
 }
@@ -932,6 +795,8 @@ nav{
     display: flex;
     flex-direction: column;
     width: 37%;
+    margin-top: -140px; /* move up */
+    padding: 0;
 }
 
 .sub-heading{
@@ -940,16 +805,6 @@ nav{
     font-weight: 700;
     color: #9FA2AB;
     padding: 10px 0px 10px 0px; /* adjust padding */
-    /* Adjust these values to move the text up */
-    
-}
-
-.exp{
-    display: flex;
-    flex-direction: column;
-    /* Adjust these values to move the text up */
-    margin-top: -140px; /* move up */
-    padding: 0;
 }
 
 .exp .content-text{
