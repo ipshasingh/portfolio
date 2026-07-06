@@ -845,7 +845,7 @@ nav{
     flex-direction: column;
     width: 37%;
     margin-left: 100px;
-    margin-top: -20px;
+    margin-top: 20px;
     
 }
 
@@ -860,20 +860,22 @@ nav{
 .languages{
     display: flex;
     align-items: start;
-    flex-direction: column;
-    margin-top: 30px;
+    flex-direction: row;
+    margin-top: 10px;
+    gap: 20px;
 }
 
 .languages .lang{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    
     
 }
 
 .languages .lang img{
-    height: 50px;
-    width: 70px;
-    padding: 10px;
+    height: 30px;
+    width: 50px;
+    padding: 5px;
 }
 
 .lang h2,p{
@@ -883,7 +885,7 @@ nav{
 
 .lang h2{
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .lang p{
