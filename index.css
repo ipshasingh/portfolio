@@ -598,7 +598,9 @@ nav{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 50%;
+    box-shadow:
+        0 0 80px rgba(196,158,48,.37);
 }
 
 .project-text {
@@ -608,7 +610,7 @@ nav{
     gap: 12px;
     font-family: 'Poppins', sans-serif;
     color: #C9CFD3;
-    font-size: 20px;
+    font-size: 16px;
     text-align: justify;
     max-width: 750px;
 }
