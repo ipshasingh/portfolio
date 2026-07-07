@@ -119,7 +119,7 @@ nav{
 }
 
 .page-2{
-    min-height: 130vh;
+    min-height: 100vh;
     width: 100%;
     background-image: linear-gradient( #286498 69.5%,#fff 69.5% );
     background-position: center;
