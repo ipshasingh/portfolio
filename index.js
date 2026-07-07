@@ -17,6 +17,9 @@ const bgText = document.querySelector('.page-2 .bg-text');
 const landingPage = document.querySelector('.landing-page');
 const avatarCircle = document.querySelector('.img-circle');
 
+const expTimeline = document.querySelector('.page-exp .exp-timeline');
+const expDot = document.querySelector('.page-exp .exp-dot');
+
 if (landingPage && avatarCircle) {
     landingPage.addEventListener('mousemove', (e) => {
         const rect = landingPage.getBoundingClientRect();
@@ -122,4 +125,22 @@ window.addEventListener('scroll', () => requestAnimationFrame(updatePage2Paralla
 window.addEventListener('resize', updatePage2Parallax);
 updatePage2Parallax();
 
+// ---- Scroll-tracking dot: Experience timeline ----
+
+
+function updateExpDot(){
+    if (!expTimeline || !expDot) return;
+
+    const rect = expTimeline.getBoundingClientRect();
+    const viewportCenter = window.innerHeight / 2;
+
+    let progress = (viewportCenter - rect.top) / rect.height;
+    progress = Math.max(0, Math.min(1, progress));
+
+    expDot.style.top = `${progress * rect.height}px`;
+}
+
+window.addEventListener('scroll', () => requestAnimationFrame(updateExpDot));
+window.addEventListener('resize', updateExpDot);
+updateExpDot();
 

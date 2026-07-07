@@ -1104,7 +1104,38 @@ nav{
     margin:0px 100px;
     width:auto;
 }
+.exp-timeline{
+    position: relative;
+    padding-left: 30px;
+}
 
+.exp-timeline::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #286498;
+}
+
+.exp-timeline .content-text{
+    border-left: none;   /* replaces the old per-entry lines with the one continuous line above */
+    padding-left: 0;
+}
+
+.exp-dot{
+    position: absolute;
+    left: -6.5px;         /* centers the dot on the 3px line */
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #C49E30;
+    box-shadow: 0 0 0 5px rgba(196,158,48,0.25);
+    transition: top 0.1s linear;
+    pointer-events: none;
+}
 
 
 .content-text{
