@@ -80,6 +80,45 @@ nav{
     color: #286498;
 }
 
+.landing-title{
+    position: relative;
+    display: inline-block;
+}
+
+.title-base,
+.title-texture{
+    display: block;
+    margin: 0;
+}
+
+.title-texture{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+
+    background: linear-gradient(120deg, #C49E30, #f3dca3, #C49E30);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-mask-image: radial-gradient(circle 140px, #000 0%, transparent 75%);
+    mask-image: radial-gradient(circle 140px, #000 0%, transparent 75%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 280px 280px;
+    mask-size: 280px 280px;
+
+    -webkit-mask-position: -9999px -9999px;   /* parked off-screen until hover */
+    mask-position: -9999px -9999px;
+
+    transition: mask-position 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                -webkit-mask-position 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .half-1 p{
     width: 80%;
 
@@ -123,20 +162,50 @@ nav{
 }
 
 .page-2{
-    min-height: 100vh;
+    position: relative;   /* NEW — needed so .bg-text transforms relative to this section, not the whole page */
+    overflow: hidden;     /* NEW — keeps the shifted background text from spilling past the section edges */
+    height: 130vh;
     width: 100%;
     background-image: linear-gradient( #286498 69.5%,#fff 69.5% );
     background-position: center;
     background-size: cover;
     margin: auto;
     text-align: center;
-    
+}
+
+.bg-text{
+    will-change: transform;   /* NEW — hints the browser to optimize this for smooth animation */
+    padding: 3% 9%;
+    position: absolute;
+    height: 69%;
+}
+
+.img-circle{
+    transition: transform 0.15s ease-out;   /* NEW — smooths the mouse-parallax glide */
+    /* ...rest unchanged... */
+}
+.bg-text-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 69%;
+    will-change: transform;
 }
 
 .bg-text{
     padding: 3% 9%;
     position: absolute;
-    height: 69%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-text-overlay{
+    pointer-events: none;
+    clip-path: inset(100% 0 0 0);        /* fully hidden until JS reveals it */
+    -webkit-clip-path: inset(100% 0 0 0);
 }
 
 .bg-text h1{
@@ -149,21 +218,19 @@ nav{
     color: #C49E30;
 }
 
-.bg-text h1:nth-child(2){
-    color: #286498;
-    text-shadow: -3px -3px 0 #C49E30, 3px -3px 0 #C49E30, -3px 3px 0 #C49E30, 3px 3px 0 #C49E30;
-}
-
-.bg-text h1:nth-child(3){
-    color: #286498;
-    text-shadow: -3px -3px 0 #C49E30, 3px -3px 0 #C49E30, -3px 3px 0 #C49E30, 3px 3px 0 #C49E30;
-}
-
+.bg-text h1:nth-child(2),
+.bg-text h1:nth-child(3),
 .bg-text h1:nth-child(4){
     color: #286498;
     text-shadow: -3px -3px 0 #C49E30, 3px -3px 0 #C49E30, -3px 3px 0 #C49E30, 3px 3px 0 #C49E30;
 }
 
+/* the overlay only needs to override the color — it inherits the gold outline from the rule above */
+.bg-text-overlay h1:nth-child(2),
+.bg-text-overlay h1:nth-child(3),
+.bg-text-overlay h1:nth-child(4){
+    color: #fff;
+}
 
 
 .cards-row {
@@ -969,11 +1036,18 @@ nav{
     padding:18px 25px;
     background:#d6dce0;
     border-radius:16px;
-} */
+} 
+
+.lang:hover{
+    transform: scale(1.06);                                     /* NEW — the enlarge effect */
+    box-shadow: 0 12px 28px rgba(0,0,0,.15);                    /* NEW — subtle lift to sell the effect */
+}
+
+
 
 .page-6{
     width: 100%;
-    background:#C9CFD3;
+    background:#fff;
     padding:60px 0 90px;
 }
 
