@@ -760,7 +760,7 @@ nav{
 .page-5{
     height: 127vh;
     width: 100%;
-    background-color: #C49E30;    
+    background-color: #fff;    
 
 }
 
@@ -1272,11 +1272,14 @@ nav{
 
 
 .footer{
-    height: 50vh;
+    height: 37vh;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color: #5E99BD;
+    background-color: #286498;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .resume {
@@ -1284,39 +1287,43 @@ nav{
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 500px;
-    margin-left: 60px;
+    gap: 24px;
+    width: auto;
 }
 
 .resume .scan img{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
 }
 
 .resume h2{
     font-family: 'Poppins', sans-serif;
-    font-size: 38px;
+    font-size: 28px;
     font-weight: 700;
     color: #fff;
 
-    padding-left: 20px;
+    padding-left: 0;
 }
 
 .socials{
     display: flex;
-    align-items: start;
-    flex-direction: column;
-    width: 500px;
-    margin: 90px 20px;
-    
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    width: auto;
+    margin: 0;
 }
 
-.socials p,i{
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
+.socials .contact-btn{
+    background-color: #fff;
     color: #000;
-    padding-left: 70px;
+    border: none;
+}
+
+.socials .contact-btn:hover{
+    background-color: #e6e6e6;
+    color: #000;
+    transform: translateY(-2px);
 }
 
 .typing{
