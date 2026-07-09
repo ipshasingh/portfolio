@@ -428,101 +428,52 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
+    padding: 0 30px 30px;
     position: relative;
 }
 
+.before-img,
+.after-img {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 230px;
+}
 
+.after-img {
+    align-items: flex-end;
+}
 
 .text{
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    font-size: 26px;
-    font-weight: 400 
-} 
+    font-size: 21px;
+    font-weight: 500;
+    background-color: rgba(255,255,255,.16);
+    padding: 12px 24px;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    width: fit-content;
+    text-align: center;
+    transition: transform .25s ease, background-color .25s ease;
+}
 
-/* .body-container img{
-    height: 400px;
-    width: 400px;
-    margin-top: 80px;
-    margin-bottom: 0px;
-} */
+.text:hover {
+    background-color: rgba(255,255,255,.26);
+}
+
+/* brick-wall stagger: offset every other row, like bricks in a course */
+.before-img .text:nth-child(odd)  { transform: translateX(0) rotate(-1.5deg); }
+.before-img .text:nth-child(even) { transform: translateX(55px) rotate(1.5deg); }
+
+.after-img .text:nth-child(odd)  { transform: translateX(0) rotate(1.5deg); }
+.after-img .text:nth-child(even) { transform: translateX(-55px) rotate(-1.5deg); }
 
 .page-3 .body-container img{
 
     height:400px;
     width:400px;
-}
-
-#ppt {
-    margin-top: 15px;
-    transform: rotate(-4deg);
-}
-
-#cv{
-    margin-top: 16px;
-    transform: rotate(4deg);
-}
-
-#tk {
-    margin-top: 20px;
-    transform: rotate(1deg);
-}
-
-#php{
-    margin-top: 25px;
-    transform: rotate(-2deg);
-}
-
-#figma{
-    margin-top: 25px;
-    transform: rotate(3deg);
-}
-
-#html{
-    margin-top: 25px;
-    transform: rotate(1deg);
-}
-
-#mysql{
-    margin-top: 25px;
-    transform: rotate(5deg);
-}
-
-#js{
-    margin-top: 25px;
-    transform: rotate(-5deg);
-}
-
-#pandas {
-    margin-top: 30px;
-    transform: rotate(7deg);
-}
-
-#python{
-    margin-top: 30px;
-    transform: rotate(-7deg)
-}
-
-#css{
-    margin-top: 15px;
-    transform: rotate(12deg);
-}
-
-#canva{
-    margin-top: 15px;
-    transform: rotate(-12deg);
-}
-
-#cplus{
-    margin-top: 5px;
-    margin-left: 100px;
-    transform: rotate(17deg);
-}
-
-#java{
-    margin-top: 5px;
-    margin-right: 100px;
-    transform: rotate(-17deg);
 }
 
 
@@ -809,7 +760,7 @@ nav{
 .page-5{
     height: 127vh;
     width: 100%;
-    background-color: #fff;    
+    background-color: #C49E30;    
 
 }
 
@@ -1096,8 +1047,27 @@ nav{
     padding:60px 0 90px;
 }
 
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.grid-cell {
+    border: 1px solid rgba(40,100,152,0.05);
+    position: relative;
+    transition: background-color .35s ease, border-color .35s ease;
+}
+
 .head-container{
     margin-bottom:45px;
+}
+
+#edscreen{
+    position: relative;
+    z-index: 1;
 }
 
 .top-heading{
@@ -1142,12 +1112,17 @@ nav{
     align-items:flex-start;
 
     padding:70px 0 90px;
+
+    position: relative;
+    overflow: hidden;
 }
 
 .exp{
     
     margin:0px 100px;
     width:auto;
+    position: relative;
+    z-index: 1;
 }
 .exp-timeline{
     position: relative;

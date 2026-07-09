@@ -144,3 +144,108 @@ window.addEventListener('scroll', () => requestAnimationFrame(updateExpDot));
 window.addEventListener('resize', updateExpDot);
 updateExpDot();
 
+// ---- Hover grid background (Experience section) ----
+function initHoverGrid(section, cellSize = 28, fadeDelay = 220, radius = 2.2) {
+    const container = section ? section.querySelector('.grid-overlay') : null;
+    if (!container) return;
+
+    const GLOW_RGB = '196,158,48'; // #C49E30
+    const falloffRadius = radius + 2; // extends the fade a couple cells past the core circle
+
+    let cols = 0;
+    let rows = 0;
+    let cells = [];
+
+    function build() {
+        const width = section.clientWidth;
+        const height = section.clientHeight;
+        const newCols = Math.max(1, Math.ceil(width / cellSize));
+        const newRows = Math.max(1, Math.ceil(height / cellSize));
+
+        // skip rebuilding if the grid dimensions haven't actually changed
+        if (newCols === cols && newRows === rows) return;
+        cols = newCols;
+        rows = newRows;
+
+        container.innerHTML = '';
+        container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+
+        cells = [];
+        const fragment = document.createDocumentFragment();
+
+        for (let i = 0; i < cols * rows; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'grid-cell';
+            cells.push(cell);
+            fragment.appendChild(cell);
+        }
+
+        container.appendChild(fragment);
+    }
+
+    // sets a cell's color based on how "deep" into the circle it is —
+    // solid/darker near dist 0, smoothly fading to nothing by falloffRadius.
+    // No box-shadow/gradient involved, so it stays flat rather than 3D.
+    function setCellIntensity(cell, intensity) {
+        cell.style.backgroundColor = `rgba(${GLOW_RGB}, ${(intensity * 0.4).toFixed(3)})`;
+        cell.style.borderColor = `rgba(${GLOW_RGB}, ${(intensity * 0.6).toFixed(3)})`;
+
+        clearTimeout(cell._fadeTimer);
+        cell._fadeTimer = setTimeout(() => {
+            cell.style.backgroundColor = '';
+            cell.style.borderColor = '';
+        }, fadeDelay);
+    }
+
+    // lights up a soft-edged, pixelated circle around the center cell —
+    // darkest at the core, fading out gradually rather than a hard-edged block
+    function activateCluster(centerCol, centerRow) {
+        const reach = Math.ceil(falloffRadius);
+
+        for (let dr = -reach; dr <= reach; dr++) {
+            for (let dc = -reach; dc <= reach; dc++) {
+                const dist = Math.sqrt(dc * dc + dr * dr);
+                if (dist > falloffRadius) continue;
+
+                const col = centerCol + dc;
+                const row = centerRow + dr;
+                if (col < 0 || col >= cols || row < 0 || row >= rows) continue;
+
+                const intensity = Math.pow(Math.max(0, 1 - dist / falloffRadius), 2);
+                if (intensity <= 0.02) continue;
+
+                const idx = row * cols + col;
+                setCellIntensity(cells[idx], intensity);
+            }
+        }
+    }
+
+    build();
+
+    // rebuild whenever the section's actual rendered size changes
+    // (covers late image loads, font swaps, and window resizes alike)
+    if (window.ResizeObserver) {
+        const observer = new ResizeObserver(() => build());
+        observer.observe(section);
+    } else {
+        window.addEventListener('resize', build);
+    }
+
+    // Track mouse position on the whole section rather than relying on
+    // hover events landing on individual cells — this way the grid still
+    // lights up correctly even when text or other content sits above it.
+    section.addEventListener('mousemove', (e) => {
+        if (!cols || !rows) return;
+        const rect = section.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x < 0 || y < 0 || x > rect.width || y > rect.height) return;
+
+        const col = Math.min(cols - 1, Math.floor(x / (rect.width / cols)));
+        const row = Math.min(rows - 1, Math.floor(y / (rect.height / rows)));
+        activateCluster(col, row);
+    });
+}
+
+initHoverGrid(document.querySelector('.page-exp'));
